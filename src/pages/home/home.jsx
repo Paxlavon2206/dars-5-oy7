@@ -51,7 +51,8 @@ export const Home = () => {
   };
   const { mutate, isPending } = useCreateList();
   const ref = useRef(null);
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault()
     mutate(
       {
         description: "Mr Lorem",
@@ -59,7 +60,6 @@ export const Home = () => {
       },
       {
         onSuccess: () => {
-          toast.error("Error");
           toast.success("Added");
           queryClient.invalidateQueries({ queryKey: ["todolist"] });
         },
