@@ -65,6 +65,7 @@ export const Home = () => {
         },
       }
     );
+    ref.current.value = "";
   };
   return (
     <div className=" pt-4">
